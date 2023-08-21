@@ -70,7 +70,7 @@ body{
 
 .splashDiv2{
   background-image: url("https://www.shiply.com/img/article/man-and-van/540/man-with-a-van2.jpg");
-  height: 20em;
+  height:50vh;
   width:100%;            
   background-repeat:   no-repeat;
   background-position: center center;  
@@ -90,7 +90,7 @@ body{
   color: white;
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 15vh;
   justify-content: center;
 }
 
