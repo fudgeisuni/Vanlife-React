@@ -95,8 +95,11 @@ body{
 }
 
 .splashButton{
-  background-color: orange;
+  background-color: #F6BE00;
   color: white;
+  text-shadow: black 0px 0px 10px;
+  font-weight: 700;
+  font-size: medium;
   padding-left: 37vw;
   padding-right: 37vw;
   padding-top: 2vh;
@@ -104,7 +107,7 @@ body{
 }
 
 .splashDiv3{
-  background-color: orange;
+  background-color: #F6BE00;
   margin: 2vw;
   padding-top: 0.1vw;
   padding-right: 2vw;
