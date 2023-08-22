@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
 import Home from './Home';
 import About from './About';
 import Vans from './Vans';
+// Import fake API server
+import "./server.js";
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
