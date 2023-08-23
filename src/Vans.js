@@ -3,17 +3,29 @@ import "./style.css";
 import "./server.js";
 
 export default function Vans() {
-  const [resp, setResp] = React.useState([]);
+  const [vans, setVans] = React.useState([]);
 
   React.useEffect(function() {
     fetch("/api/vans")
         .then(res => res.json())
-        .then(data => setResp(data.results[0]))
+        .then(data => setVans(data.vans))
   }, [])
+  
+  const vanElements = vans.map(van => (
+    <div key={van.id} className="van-tile">
+      <img src={van.imageUrl} />
+      <div className="van-info">
+        <h3>{van.name}</h3>
+        <p>${van.price}<span>/day</span></p>  
+      </div>
+      <i className={`van-type ${van.type} selected`}>{van.type}</i>
+    </div>
+  ))
 
-  console.log(resp)
-
+  
   return (
-    <h1>Vans Page Goes Here 🚚</h1>
+    <>
+    { vanElements}
+    </>
   )
 }
