@@ -127,3 +127,26 @@ body{
   padding-bottom: 2vh;
   margin-bottom: 1vw;
 }
+
+.over-tile{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  grid-gap: 2em;
+  padding-right: 2em;
+  padding-left: 2em;
+  padding-top: 2em;
+}
+
+.van-image{
+  width: 100%;
+}
+
+.van-type{
+  background-color: black;
+  padding: 0.5em;
+  color: white;
+  display: block;
+  text-align: center;
+  justify-content: center;
+}

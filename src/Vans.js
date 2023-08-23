@@ -13,7 +13,7 @@ export default function Vans() {
   
   const vanElements = vans.map(van => (
     <div key={van.id} className="van-tile">
-      <img src={van.imageUrl} />
+      <img class="van-image" src={van.imageUrl} />
       <div className="van-info">
         <h3>{van.name}</h3>
         <p>${van.price}<span>/day</span></p>  
@@ -25,7 +25,9 @@ export default function Vans() {
   
   return (
     <>
+    <div class="over-tile">
     { vanElements}
+    </div>
     </>
   )
 }
