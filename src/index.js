@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
 import Home from './Home';
 import About from './About';
 import Vans from './Vans';
+import VanDetail from './VanDetail';
 // Import fake API server
 import "./server.js";
 
@@ -32,6 +33,7 @@ root.render(
         <Route path="/"  element={<Home />}/>
         <Route path="/about"  element={<About />}/>
         <Route path="/vans" element={<Vans />}/>
+        <Route path="/vans:id" element={<VanDetail/>}/>
       </Routes>
     </Router>
   </StrictMode>

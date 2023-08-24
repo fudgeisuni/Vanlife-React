@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 import "./server.js";
+import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
 
 export default function Vans() {
   const [vans, setVans] = React.useState([]);
@@ -12,7 +13,7 @@ export default function Vans() {
   }, [])
   
   const vanElements = vans.map(van => (
-    <Link  class="navText" to={`vans/van.id`}>
+    <Link  class="navText" to={`/vans/${van.id}`}>
     <div key={van.id} className="van-tile">
       <img class="van-image" src={van.imageUrl} />
       <div className="van-info">
