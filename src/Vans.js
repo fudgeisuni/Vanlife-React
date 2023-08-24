@@ -12,6 +12,7 @@ export default function Vans() {
   }, [])
   
   const vanElements = vans.map(van => (
+    <Link  class="navText" to={`vans/van.id`}>
     <div key={van.id} className="van-tile">
       <img class="van-image" src={van.imageUrl} />
       <div className="van-info">
@@ -20,6 +21,7 @@ export default function Vans() {
       </div>
       <i className={`van-type ${van.type} selected`}>{van.type}</i>
     </div>
+    </Link>
   ))
 
   
