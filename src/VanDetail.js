@@ -14,9 +14,6 @@ export default function VanDetail(){
           .then(data => setVan(data.vans))
     }, [params.id])
 
-
-    
-
     return(
      <div>
      {van ? (   
