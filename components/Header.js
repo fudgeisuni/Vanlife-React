@@ -1,4 +1,5 @@
 import React from "react"
+import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
 
 export default function Header() {
   return (
@@ -13,6 +14,9 @@ export default function Header() {
       </td>
       <td class="navLink">
       <Link class="splashText" to = "/vans">Vans</Link>
+      </td>
+      <td class="navLink">
+      <Link class="splashText" to = "/host">Host</Link>
       </td>
       </tr>
     </table>
