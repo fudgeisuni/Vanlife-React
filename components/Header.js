@@ -13,10 +13,10 @@ export default function Header() {
       <Link class="splashText" to="/about">About</Link>
       </td>
       <td class="navLink">
-      <Link class="splashText" to = "/vans">Vans</Link>
+      <Link class="splashText" to = "/host">Host</Link>
       </td>
       <td class="navLink">
-      <Link class="splashText" to = "/host">Host</Link>
+      <Link class="splashText" to = "/vans">Vans</Link>
       </td>
       </tr>
     </table>

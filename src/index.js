@@ -6,6 +6,7 @@ import About from './About';
 import Vans from './Vans';
 import VanDetail from './VanDetail';
 import Host from './Host'
+import HostLayout from './HostLayout'
 import Income from './Income'
 import Reviews from './Reviews'
 // Import fake API server
@@ -19,14 +20,18 @@ root.render(
   <StrictMode>
       <Router element={<Layout />}>
         <Routes>
-          <Route element={<Layout />}>
-            <Route path="/"  element={<Home />}/>
-            <Route path="/about"  element={<About />}/>
-            <Route path="/vans" element={<Vans />}/>
-            <Route path="/vans/:id" element={<VanDetail/>}/>
-            <Route path="/host" element={<Host />}/>
-            <Route path="/income" element={<Income />}/>
-            <Route path="/reviews" element={<Reviews />}/>
+          <Route path="/" element={<Layout />}>
+            <Route index  element={<Home />}/>
+            <Route path="about"  element={<About />}/>
+            <Route path="vans">
+               <Route index element={<Vans />} />
+               <Route path=":id" element={<VanDetail/>}/>
+            </Route>
+            <Route path="host" element={<HostLayout />}>
+              <Route index element={<Host />}/>
+              <Route path="income" element={<Income />}/>
+              <Route path="reviews" element={<Reviews />}/>
+           </Route>
           </Route>
         </Routes>
       </Router>
