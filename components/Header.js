@@ -1,7 +1,15 @@
 import React from "react"
-import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route, Link, NavLink} from "react-router-dom"
 
 export default function Header() {
+
+  const activeStyle = {
+    fontWeight: "600",
+    color: "yellow"
+  }
+
+
+
   return (
     <nav>
     <table>
@@ -10,13 +18,21 @@ export default function Header() {
       <Link class="navText" to="/">#VANLIFE</Link>
       </td>
       <td class="navLink">
-      <Link class="splashText" to="/about">About</Link>
+      <NavLink 
+      class="splashText" 
+      to="/about"
+      style={({isActive}) => isActive ? activeStyle : null}>About</NavLink>
       </td>
       <td class="navLink">
-      <Link class="splashText" to = "/host">Host</Link>
+      <NavLink 
+      class="splashText" 
+      to = "/host"
+      style={({isActive}) => isActive ? activeStyle : null}>Host</NavLink>
       </td>
       <td class="navLink">
-      <Link class="splashText" to = "/vans">Vans</Link>
+      <NavLink class="splashText" 
+      to = "/vans"
+      style={({isActive}) => isActive ? activeStyle : null}>Vans</NavLink>
       </td>
       </tr>
     </table>
