@@ -11,9 +11,6 @@ export default function Home() {
        <button class="splashButton">Find your van</button>
     </div>
     </div>
-    <div class="outerSplashDiv">
-      <p class="copyrightText">© 2022 #VANLIFE</p>
-    </div>
   </div>
   );
 }

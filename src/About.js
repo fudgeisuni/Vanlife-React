@@ -14,9 +14,6 @@ export default function About() {
       <h1>Your destination is waiting. <span><br/>Your van is ready.</span></h1>
       <button class="splashButton2">Explore our vans</button>
     </div>
-    <div class="outerSplashDiv">
-      <p class="copyrightText">© 2022 #VANLIFE</p>
-    </div>
     </div>
   );
 }
