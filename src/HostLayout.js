@@ -29,6 +29,10 @@ export default function HostLayout(){
       <NavLink class="splashText" to = "/host/reviews" 
       style={({isActive}) => isActive ? activeStyle : null}>Reviews</NavLink>
       </td>
+      <td class="navLink">
+      <NavLink class="splashText" to = "/host/vans" 
+      style={({isActive}) => isActive ? activeStyle : null}>Vans</NavLink>
+      </td>
       </tr>
     </table>
     </nav>

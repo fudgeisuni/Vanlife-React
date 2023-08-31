@@ -9,6 +9,8 @@ import Host from './Host'
 import HostLayout from './HostLayout'
 import Income from './Income'
 import Reviews from './Reviews'
+import HostVans from './HostVans'
+import HostVanDetail from './HostVanDetail'
 // Import fake API server
 import "./server.js";
 import Layout from '../components/Layout';
@@ -31,6 +33,10 @@ root.render(
               <Route index element={<Host />}/>
               <Route path="income" element={<Income />}/>
               <Route path="reviews" element={<Reviews />}/>
+              <Route path="vans">
+                <Route index element={<HostVans />}></Route>
+                <Route path=":id" element={<HostVanDetail/>}/>
+              </Route>
            </Route>
           </Route>
         </Routes>
