@@ -29,7 +29,7 @@ export default function Vans() {
   return (
     <>
     <div class="over-tile">
-    { vanElements}
+      {vanElements}
     </div>
     </>
   )

@@ -156,6 +156,30 @@ body{
 }
 
 .hostVans{
-  display: flex;
+  display: block;
   min-height: 61vh; 
+}
+
+.hostVansList{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-content: center;
+  grid-gap: 2em;
+  padding-right: 2em;
+  padding-left: 2em;
+  padding-top: 2em;
+}
+
+.van-tile-host{
+  display: flex;
+  width: 100%;
+}
+
+.van-image-host{
+  width: 50%;
+}
+
+.van-info-host{
+  float: left;
+  width: 100%;
 }
