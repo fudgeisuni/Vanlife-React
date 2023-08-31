@@ -7,7 +7,7 @@ export default function HostLayout(){
   const activeStyle = {
     fontWeight: "600",
     textDecoration: "underline",
-    color: "yellow"
+    color: "#DDD313"
   }
 
 
@@ -26,12 +26,12 @@ export default function HostLayout(){
       style={({isActive}) => isActive ? activeStyle : null}>Income</NavLink>
       </td>
       <td class="navLink">
-      <NavLink class="splashText" to = "/host/reviews" 
-      style={({isActive}) => isActive ? activeStyle : null}>Reviews</NavLink>
-      </td>
-      <td class="navLink">
       <NavLink class="splashText" to = "/host/vans" 
       style={({isActive}) => isActive ? activeStyle : null}>Vans</NavLink>
+      </td>
+      <td class="navLink">
+      <NavLink class="splashText" to = "/host/reviews" 
+      style={({isActive}) => isActive ? activeStyle : null}>Reviews</NavLink>
       </td>
       </tr>
     </table>

@@ -2,6 +2,8 @@ import React from "react"
 
 export default function HostVans(){
   return(
-   <h1>Host Vans</h1> 
+    <div class="hostVans">
+         <h1>Your listed vans</h1> 
+    </div>
   )
 }

@@ -18,6 +18,9 @@ a{
   text-decoration: none;
   color: white;
   margin-right: 2vw;
+  font-weight: 600;
+  font-size: large;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .nav{
@@ -150,4 +153,9 @@ body{
   display: block;
   text-align: center;
   justify-content: center;
+}
+
+.hostVans{
+  display: flex;
+  min-height: 61vh; 
 }
