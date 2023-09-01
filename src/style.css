@@ -167,19 +167,26 @@ body{
   grid-gap: 2em;
   padding-right: 2em;
   padding-left: 2em;
-  padding-top: 2em;
 }
 
 .van-tile-host{
   display: flex;
-  width: 100%;
+  align-items: center;
+  background-color: whitesmoke;
+  border: 1px solid black;
+  margin: 1em;
+  padding-block: 18px;
+  padding-left: 24px;
 }
 
 .van-image-host{
-  width: 50%;
+  height: 70px;
+  border-radius: 5px;
+  margin-right: 17px;
 }
 
 .van-info-host{
-  float: left;
-  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  padding-right: 0.7em;
 }
