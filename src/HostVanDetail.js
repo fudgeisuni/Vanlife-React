@@ -1,5 +1,5 @@
 import React from "react"
-import { useParams, Link } from "react-router-dom"
+import { useParams, Link, Outlet } from "react-router-dom"
 import "./style.css";
 
 export default function HostVanDetail(){
@@ -27,6 +27,7 @@ export default function HostVanDetail(){
               <h3>{van.name}</h3>
               <p>${van.price}<span>/day</span></p>  
             </div>
+            <Outlet />
           </div>
       </section>
       ) : <h2>Loading</h2>}
