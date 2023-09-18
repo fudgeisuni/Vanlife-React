@@ -17,20 +17,20 @@ export default function HostLayout(){
     <table>
       <tr>
       <td class="navLink">
-      <NavLink class="splashText" to="/host"
+      <NavLink class="splashText" to="."
       end
       style={({isActive}) => isActive ? activeStyle : null}>Dashboard</NavLink>
       </td>
       <td class="navLink">
-      <NavLink class="splashText" to = "/host/income"
+      <NavLink class="splashText" to = "income"
       style={({isActive}) => isActive ? activeStyle : null}>Income</NavLink>
       </td>
       <td class="navLink">
-      <NavLink class="splashText" to = "/host/vans" 
+      <NavLink class="splashText" to = "vans" 
       style={({isActive}) => isActive ? activeStyle : null}>Vans</NavLink>
       </td>
       <td class="navLink">
-      <NavLink class="splashText" to = "/host/reviews" 
+      <NavLink class="splashText" to = "reviews" 
       style={({isActive}) => isActive ? activeStyle : null}>Reviews</NavLink>
       </td>
       </tr>

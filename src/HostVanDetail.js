@@ -1,5 +1,5 @@
 import React from "react"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import "./style.css";
 
 export default function HostVanDetail(){
@@ -17,13 +17,18 @@ export default function HostVanDetail(){
     return(
      <div>
      {van ? (   
-     <div key={van.id} className="van-tile">
-        <img class="van-image" src={van.imageUrl} />
-        <div className="van-info">
-          <h3>{van.name}</h3>
-          <p>${van.price}<span>/day</span></p>  
-        </div>
-      </div>
+      <section>
+        <Link to=".." className="back-button">
+          &larr;<span>Back to all vans</span>
+        </Link>
+        <div key={van.id} className="van-tile">
+            <img class="van-image" src={van.imageUrl} />
+            <div className="van-info">
+              <h3>{van.name}</h3>
+              <p>${van.price}<span>/day</span></p>  
+            </div>
+          </div>
+      </section>
       ) : <h2>Loading</h2>}
       </div>
     )
