@@ -179,6 +179,15 @@ body{
   padding-left: 24px;
 }
 
+.van-tile-host-detail{
+  display: table;
+  align-items: center;
+  background-color: whitesmoke;
+  border: 1px solid black;
+  width:100%;
+  margin: 1em;
+}
+
 .van-image-host{
   height: 70px;
   border-radius: 5px;

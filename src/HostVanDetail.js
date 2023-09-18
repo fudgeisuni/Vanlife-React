@@ -21,9 +21,9 @@ export default function HostVanDetail(){
         <Link to=".." className="back-button">
           &larr;<span>Back to all vans</span>
         </Link>
-        <div key={van.id} className="van-tile">
-            <img class="van-image" src={van.imageUrl} />
-            <div className="van-info">
+        <div key={van.id} className="van-tile-host-detail">
+            <img class="van-image-host" src={van.imageUrl} />
+            <div className="van-info-host">
               <h3>{van.name}</h3>
               <p>${van.price}<span>/day</span></p>  
             </div>
