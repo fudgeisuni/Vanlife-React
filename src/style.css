@@ -23,11 +23,16 @@ a{
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+nav{
+  background-color: black;
+}
+
 .nav{
   width: 100%;
   padding-top: 5vh;
   padding-bottom: 5vh;
   margin: 0;
+  background-color: black;
 }
 
 .navText{
@@ -49,10 +54,6 @@ a{
   text-decoration: underline;
 }
 
-nav{
-  background-color: black;
-  
-}
 
 body{
   margin: auto;
@@ -233,4 +234,12 @@ body{
   margin-top: 10px;
   margin-left: 26px;
   margin-bottom: 10px;
+}
+
+.host-van-detail-nav{
+  background-color: whitesmoke;
+}
+
+.navLink{
+  color: black;
 }

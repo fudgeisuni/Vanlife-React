@@ -30,6 +30,13 @@ export default function HostVanDetail(){
               <p>${van.price}<span>/day</span></p> 
             </div>
             </div>
+
+            <nav className="host-van-detail-nav">
+              <Link class="navLink">Details</Link>
+              <Link class="navLink">Pricing</Link>
+              <Link class="navLink">Photos</Link>
+            </nav>
+
             <Outlet />
           </div>
       </section>
