@@ -146,6 +146,17 @@ body{
   width: 100%;
 }
 
+.host-van-type{
+  margin-top: 2vh;
+  background-color: yellow;
+  color: black;
+  font-size: large;
+  font-weight: 600;
+  padding: 1vw;
+  border: 0vmax;
+  border-radius: 0px 20px 20px;
+}
+
 .van-type{
   background-color: black;
   padding: 0.5em;
@@ -181,13 +192,16 @@ body{
 
 .van-tile-host-detail{
   display: table;
-  align-items: center;
   background-color: whitesmoke;
   border: 1px solid black;
   width: 95vw;
   max-width:100%;
   margin: 2vw;
   flex: 0 0 100%;
+}
+
+.van-tile-host-side{
+  display: flex;
 }
 
 .van-image-host-detail{
@@ -210,7 +224,6 @@ body{
   font-size: 20px;
   font-weight: 600;
   padding-left: 0.7em;
-  display: inline-block;
 }
 
 .back-button{
