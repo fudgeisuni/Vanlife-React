@@ -184,8 +184,14 @@ body{
   align-items: center;
   background-color: whitesmoke;
   border: 1px solid black;
-  width:100%;
-  margin: 1em;
+  width: 95vw;
+  max-width:100%;
+  margin: 2vw;
+  flex: 0 0 100%;
+}
+
+.van-image-host-detail{
+  width: 40vw;
 }
 
 .van-image-host{
@@ -198,6 +204,13 @@ body{
   font-size: 20px;
   font-weight: 600;
   padding-right: 0.7em;
+}
+
+.van-info-host-detail{
+  font-size: 20px;
+  font-weight: 600;
+  padding-left: 0.7em;
+  display: inline-block;
 }
 
 .back-button{

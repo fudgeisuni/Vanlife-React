@@ -22,10 +22,10 @@ export default function HostVanDetail(){
           &larr;<span>Back to all vans</span>
         </Link>
         <div key={van.id} className="van-tile-host-detail">
-            <img class="van-image-host" src={van.imageUrl} />
-            <div className="van-info-host">
+            <img class="van-image-host-detail" src={van.imageUrl} />
+            <div className="van-info-host-detail">
               <h3>{van.name}</h3>
-              <p>${van.price}<span>/day</span></p>  
+              <p>${van.price}<span>/day</span></p> 
             </div>
             <Outlet />
           </div>
