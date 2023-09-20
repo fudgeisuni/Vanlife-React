@@ -39,7 +39,7 @@ root.render(
               <Route path="vans">
                 <Route index element={<HostVans />}></Route>
                 <Route path=":id" element={<HostVanDetail/>}>
-                  <Route path="info" element={<HostVanInfo />}></Route> 
+                  <Route index element={<HostVanInfo />}></Route> 
                   <Route path="photos" element={<HostVanPhotos />}></Route> 
                   <Route path="pricing" element={<HostVanPricing />}></Route> 
                 </Route>

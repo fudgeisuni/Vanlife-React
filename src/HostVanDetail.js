@@ -14,6 +14,13 @@ export default function HostVanDetail(){
           .then(data => setVan(data.vans))
     }, [params.id])
 
+    const activeStyles = {
+      fontWeight: "600",
+      textDecoration: "underline",
+
+    }
+  
+
     return(
      <div>
      {van ? (   
@@ -34,17 +41,21 @@ export default function HostVanDetail(){
             <nav className="host-van-detail-nav">
               <NavLink
                className="navLink"
-               to=".">Details</NavLink>
+               to="."
+               end
+               style={({isActive}) => isActive ? activeStyles : null}>Details</NavLink>
               <NavLink 
               className="navLink"
-              to="pricing">Pricing</NavLink>
+              to="pricing"
+              style={({isActive}) => isActive ? activeStyles : null}>Pricing</NavLink>
               <NavLink 
               className="navLink"
-              to="photos">
+              to="photos"
+              style={({isActive}) => isActive ? activeStyles : null}>
                 Photos</NavLink>
             </nav>
 
-            <Outlet />
+            <Outlet context={[van, setVan]}/>
           </div>
       </section>
       ) : <h2>Loading</h2>}
