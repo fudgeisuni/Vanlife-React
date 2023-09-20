@@ -243,3 +243,7 @@ body{
 .navLink{
   color: black;
 }
+
+.active{
+  color: black;
+}

@@ -1,5 +1,5 @@
 import React from "react"
-import { useParams, Link, Outlet } from "react-router-dom"
+import { useParams, Link, Outlet, NavLink } from "react-router-dom"
 import "./style.css";
 
 export default function HostVanDetail(){
@@ -32,9 +32,16 @@ export default function HostVanDetail(){
             </div>
 
             <nav className="host-van-detail-nav">
-              <Link class="navLink">Details</Link>
-              <Link class="navLink">Pricing</Link>
-              <Link class="navLink">Photos</Link>
+              <NavLink
+               className="navLink"
+               to=".">Details</NavLink>
+              <NavLink 
+              className="navLink"
+              to="pricing">Pricing</NavLink>
+              <NavLink 
+              className="navLink"
+              to="photos">
+                Photos</NavLink>
             </nav>
 
             <Outlet />
