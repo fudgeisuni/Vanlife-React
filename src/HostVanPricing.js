@@ -1,9 +1,10 @@
 import React from "react"
-import { useParams, Link } from "react-router-dom"
+import { useParams, Link, useOutletContext} from "react-router-dom"
 import "./style.css";
 
 export default function HostVanPricing(){
+  const [van] = useOutletContext();
     return(
-      <h2>Host Van Pricing</h2>
+      <p>${van.price}.00 / Day</p>
     )
 }
