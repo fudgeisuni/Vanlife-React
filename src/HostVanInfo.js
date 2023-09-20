@@ -6,8 +6,7 @@ export default function HostVanInfo(){
     const [van, setVan] = useOutletContext();
     return(
       <div class="vanInfoDiv">
-        <p>{van.name}</p>
-        <p>{van.type}</p>
+        <p><p class="headerPara">Name:</p>{van.name}</p>
         <p><p class="headerPara">Description:</p>{van.description}</p> 
       </div>
     )

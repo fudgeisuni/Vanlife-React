@@ -247,3 +247,11 @@ body{
 .active{
   text-decoration: underline;
 }
+
+.vanInfoDiv{
+  display: table;
+}
+
+.headerPara{
+  display: table-cell;
+}
