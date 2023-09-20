@@ -238,6 +238,7 @@ body{
 
 .host-van-detail-nav{
   background-color: whitesmoke;
+  margin-top: 2vw;
 }
 
 .navLink{
@@ -254,4 +255,11 @@ body{
 
 .headerPara{
   display: table-cell;
+}
+
+.navVanImage{
+  width: 20vw;
+  margin-top: 1vw;
+  margin-left: 1vw;
+  margin-bottom: 5vw;
 }
