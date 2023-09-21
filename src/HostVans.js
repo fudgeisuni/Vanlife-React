@@ -6,7 +6,8 @@ export default function HostVans(){
   const [vans, setVans] = React.useState([]);
 
   const [searchParams, setSearchParams] = useSearchParams()
-  console.log(searchParams.get("type"))
+  const typeFilter = searchParams.get("type")
+  console.log(typeFilter)
 
   React.useEffect(function() {
     fetch("/api/host/vans")
