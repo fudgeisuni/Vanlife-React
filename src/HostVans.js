@@ -1,9 +1,12 @@
 import React from "react"
-import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route, Link, useSearchParams} from "react-router-dom"
 
 export default function HostVans(){
 
   const [vans, setVans] = React.useState([]);
+
+  const [searchParams, setSearchParams] = useSearchParams()
+  console.log(searchParams.get("type"))
 
   React.useEffect(function() {
     fetch("/api/host/vans")
