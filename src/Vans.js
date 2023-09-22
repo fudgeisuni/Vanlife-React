@@ -28,6 +28,12 @@ export default function Vans() {
   
   return (
     <>
+    <div className="vist-list-filter-buttons">
+      <Link className="van-type simple" to="?type=simple">Simple</Link>
+      <Link className="van-type luxury" to="?type=luxury">Luxury</Link>
+      <Link className="van-type rugged" to="?type=rugged">Rugged</Link>
+      <Link className="van-type clear-filters" to="?">Clear</Link>
+    </div>
     <div class="over-tile">
       {vanElements}
     </div>
