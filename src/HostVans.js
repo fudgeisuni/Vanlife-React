@@ -7,7 +7,9 @@ export default function HostVans(){
 
   const [searchParams, setSearchParams] = useSearchParams()
   const typeFilter = searchParams.get("type")
-  console.log(typeFilter)
+  const typeFiltered = typeFilter.charAt(0).toUpperCase() + typeFilter.slice(1);
+  const filteredArray = typeFiltered ? vans : vans.filter(van => van.type == typeFiltered.toString()) ;
+
 
   React.useEffect(function() {
     fetch("/api/host/vans")
@@ -15,7 +17,7 @@ export default function HostVans(){
         .then(data => setVans(data.vans))
   }, [])
   
-  const vanElements = vans.map(van => (
+  const vanElements = filteredArray.map(van => (
     <div key={van.id} className="van-tile-host">
       <Link  class="navText" to={`/host/vans/${van.id}`}>
       <img class="van-image-host" src={van.imageUrl} />
