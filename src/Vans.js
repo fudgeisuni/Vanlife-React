@@ -1,10 +1,16 @@
 import React from "react";
 import "./style.css";
 import "./server.js";
-import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route, Link, searchParams, useSearchParams} from "react-router-dom"
 
 export default function Vans() {
   const [vans, setVans] = React.useState([]);
+
+  
+  const [searchParams, setSearchParams] = useSearchParams()
+  const typeFilter = searchParams.get("type")
+  const typeFiltered = typeFilter.charAt(0).toUpperCase() + typeFilter.slice(1);
+  const filteredArray = typeFiltered ? vans : vans.filter(van => van.type == typeFiltered.toString());
 
   React.useEffect(function() {
     fetch("/api/vans")
@@ -12,7 +18,7 @@ export default function Vans() {
         .then(data => setVans(data.vans))
   }, [])
   
-  const vanElements = vans.map(van => (
+  const vanElements = filteredArray.map(van => (
     <div key={van.id} className="van-tile">
       <Link  class="navText" to={`/vans/${van.id}`}>
       <img class="van-image" src={van.imageUrl} />
