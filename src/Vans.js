@@ -9,8 +9,10 @@ export default function Vans() {
   
   const [searchParams, setSearchParams] = useSearchParams()
   const typeFilter = searchParams.get("type")
-  const typeFiltered = typeFilter.charAt(0).toUpperCase() + typeFilter.slice(1);
-  const filteredArray = typeFiltered ? vans : vans.filter(van => van.type == typeFiltered.toString());
+  const filteredArray = typeFilter?  vans.filter(van => van.type == typeFilter.toString()) : vans;
+
+  console.log(typeFilter)
+  console.log(filteredArray)
 
   React.useEffect(function() {
     fetch("/api/vans")
