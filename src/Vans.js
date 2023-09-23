@@ -38,9 +38,12 @@ export default function Vans() {
     <>
     <div className="vist-list-filter-buttons">
       <div>
-      <Link className="filterButton" to="?type=simple">Simple</Link>
-      <Link className="filterButton" to="?type=luxury">Luxury</Link>
-      <Link className="filterButton" to="?type=rugged">Rugged</Link>
+      <button className="filterButton" 
+      onClick={() => setSearchParams({type: "simple"})}>Simple</button>
+         <button className="filterButton" 
+      onClick={() => setSearchParams({type: "luxury"})}>Luxury</button>
+         <button className="filterButton" 
+      onClick={() => setSearchParams({type: "rugged"})}>Rugged</button>
       <Link className="filterButton" to="?">Clear</Link>
       </div>
     </div>
