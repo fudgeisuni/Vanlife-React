@@ -22,7 +22,7 @@ export default function Vans() {
   
   const vanElements = filteredArray.map(van => (
     <div key={van.id} className="van-tile">
-      <Link  class="navText" to={`/vans/${van.id}`}>
+      <Link  class="navText" to={van.id}>
       <img class="van-image" src={van.imageUrl} />
       </Link>
       <div className="van-info">
@@ -44,7 +44,9 @@ export default function Vans() {
       onClick={() => setSearchParams({type: "luxury"})}>Luxury</button>
          <button className="filterButton" 
       onClick={() => setSearchParams({type: "rugged"})}>Rugged</button>
+      {typeFilter != null &&
       <Link className="filterButton" to="?">Clear</Link>
+       }
       </div>
     </div>
     <div class="over-tile">
