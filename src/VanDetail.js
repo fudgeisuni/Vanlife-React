@@ -1,5 +1,5 @@
 import React from "react"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import "./style.css";
 
 export default function VanDetail(){
@@ -18,6 +18,9 @@ export default function VanDetail(){
      <div>
      {van ? (   
      <div key={van.id} className="van-tile">
+        <Link to=".." className="back-button">
+          &larr;<span>Back to all vans</span>
+        </Link>
         <img class="van-image" src={van.imageUrl} />
         <div className="van-info">
           <h3>{van.name}</h3>
