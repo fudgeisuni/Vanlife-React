@@ -13,6 +13,7 @@ export default function Vans() {
 
   console.log(typeFilter)
   console.log(filteredArray)
+  console.log(searchParams.toString())
 
   React.useEffect(function() {
     fetch("/api/vans")
