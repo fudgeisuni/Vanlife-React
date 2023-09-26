@@ -44,6 +44,7 @@ root.render(
                   <Route path="pricing" element={<HostVanPricing />}></Route> 
                 </Route>
               </Route>
+              <Route path="*"  element={<h1>Page not found!</h1>}/>
            </Route>
           </Route>
         </Routes>
