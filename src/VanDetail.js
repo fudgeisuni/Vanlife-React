@@ -10,6 +10,8 @@ export default function VanDetail(){
     const location = useLocation()
     console.log(location)
 
+    const typeFilter = location.state.typeFilter;
+
     React.useEffect(function() {
       fetch("/api/vans/" + params.id.toString())
           .then(res => res.json())
@@ -21,7 +23,8 @@ export default function VanDetail(){
      {van ? (   
      <div key={van.id} className="van-tile">
         <Link to={location.state.searchParams ?'/vans/?' + location.state.searchParams.toString() : '/vans'} className="back-button">
-          &larr;<span>Back to all vans</span>
+          &larr;<span>{location.state.typeFilter ? 'Back to ' + typeFilter.toString() + ' vans'
+          : 'Back to all vans' }</span>
         </Link>
         <img class="van-image" src={van.imageUrl} />
         <div className="van-info">
