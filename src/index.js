@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route, Link, RouterProvider, createBrowserRouter, createRoutesFromElements, Routes, Route} from "react-router-dom"
 import Home from './Home';
 import About from './About';
-import Vans from './Vans';
+import Vans, { loader as vanPageLoader } from './Vans';
 import VanDetail from './VanDetail';
 import Host from './Host'
 import HostLayout from './HostLayout'
@@ -18,6 +18,7 @@ import HostVanPricing from './HostVanPricing'
 import "./server.js";
 import Layout from '../components/Layout';
 
+
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 const router = createBrowserRouter(createRoutesFromElements(
@@ -25,7 +26,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route index  element={<Home />}/>
     <Route path="about"  element={<About />}/>
     <Route path="vans">
-      <Route index element={<Vans />} />
+      <Route index loader={vanPageLoader} element={<Vans />} />
       <Route path=":id" element={<VanDetail/>}/>
     </Route>
     <Route path="host" element={<HostLayout />}>
