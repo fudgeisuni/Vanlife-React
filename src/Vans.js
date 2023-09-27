@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route, Link, searchParams, useSearchPa
 
 export default function Vans() {
   const [vans, setVans] = React.useState([]);
+  const [loading, setLoading] = React.useState(false)
 
   
   const [searchParams, setSearchParams] = useSearchParams()
@@ -18,11 +19,17 @@ export default function Vans() {
 
   React.useEffect(() => {
     async function loadVans() {
+      setLoading(true)
       const data = await getVans()
       setVans(data)
+      setLoading(false)
     }
     loadVans()
   }, [])
+
+  if(loading) {
+    return <h1>Loading</h1>
+  }
   
   const vanElements = filteredArray.map(van => (
     <div key={van.id} className="van-tile">
