@@ -17,15 +17,16 @@ import HostVanPricing from './HostVanPricing'
 // Import fake API server
 import "./server.js";
 import Layout from '../components/Layout';
+import Error from '../components/Error';
 
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 const router = createBrowserRouter(createRoutesFromElements(
-   <Route path="/" element={<Layout />} errorElement={<h1>There was an error!</h1>}>
+   <Route path="/" element={<Layout />}>
     <Route index  element={<Home />}/>
     <Route path="about"  element={<About />}/>
-    <Route path="vans">
+    <Route path="vans" errorElement={<Error />}>
       <Route index loader={vanPageLoader} element={<Vans />} />
       <Route path=":id" element={<VanDetail/>}/>
     </Route>

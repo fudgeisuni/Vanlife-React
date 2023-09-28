@@ -20,6 +20,8 @@ export default function Vans() {
   console.log(searchParams.toString())
   console.log(loaderData);
   
+
+
   const vanElements = filteredArray.map(van => (
     <div key={van.id} className="van-tile">
       <Link  class="navText" to={van.id} state={{searchParams : searchParams.toString(), typeFilter : typeFilter}}>
