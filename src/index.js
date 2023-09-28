@@ -22,7 +22,7 @@ import Layout from '../components/Layout';
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 const router = createBrowserRouter(createRoutesFromElements(
-   <Route path="/" element={<Layout />}>
+   <Route path="/" element={<Layout />} errorElement={<h1>There was an error!</h1>}>
     <Route index  element={<Home />}/>
     <Route path="about"  element={<About />}/>
     <Route path="vans">
