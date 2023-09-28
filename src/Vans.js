@@ -5,51 +5,20 @@ import {getVans} from "./Api.js"
 import { BrowserRouter as Router, Routes, Route, Link, searchParams, useSearchParams, useLoaderData} from "react-router-dom"
 
 export function loader() {
-  return "Vans data goes here"
+  return getVans();
 }
 
 
 export default function Vans() {
-  const [vans, setVans] = React.useState([]);
-  const [loading, setLoading] = React.useState(false)
-  const [error, setError] = React.useState(null)
-
-  
+  const loaderData = useLoaderData();
   const [searchParams, setSearchParams] = useSearchParams()
   const typeFilter = searchParams.get("type")
-  const filteredArray = typeFilter?  vans.filter(van => van.type == typeFilter.toString()) : vans;
-
-  const loaderData = useLoaderData();
+  const filteredArray = typeFilter?  loaderData.filter(van => van.type == typeFilter.toString()) : loaderData;
 
   console.log(typeFilter)
   console.log(filteredArray)
   console.log(searchParams.toString())
   console.log(loaderData);
-
-
-
-  React.useEffect(() => {
-    async function loadVans() {
-      setLoading(true)
-      try{
-        const data = await getVans()
-        setVans(data)
-      } catch(err) {
-        setError(err)
-      } finally {
-        setLoading(false)
-      }
-    }
-    loadVans()
-  }, [])
-
-  if(loading) {
-    return <h1>Loading</h1>
-  }
-
-  if(error) {
-    return <h1>There was an error: {error.message}</h1>
-  }
   
   const vanElements = filteredArray.map(van => (
     <div key={van.id} className="van-tile">
