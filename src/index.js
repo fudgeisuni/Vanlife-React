@@ -1,6 +1,6 @@
 import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter as Router, Routes, Route, Link, RouterProvider, createBrowserRouter, createRoutesFromElements, Routes, Route} from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route, Link, RouterProvider, createBrowserRouter, createRoutesFromElements, Routes, Route, redirect} from "react-router-dom"
 import Home from './Home';
 import About from './About';
 import Vans, { loader as vanPageLoader } from './Vans';
@@ -30,7 +30,15 @@ const router = createBrowserRouter(createRoutesFromElements(
       <Route index loader={vanPageLoader} element={<Vans />} />
       <Route path=":id" element={<VanDetail/>}/>
     </Route>
-    <Route path="host" element={<HostLayout />}>
+    <Route path="host" element={<HostLayout />} loader={
+      async() => {
+        const isLoggedIn = false
+        if(!isLoggedIn){
+            redirect("/login")
+        }
+        return null
+      }
+    }>
       <Route index element={<Host />}/>
       <Route path="income" element={<Income />}/>
       <Route path="reviews" element={<Reviews />}/>
