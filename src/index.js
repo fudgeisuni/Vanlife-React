@@ -28,20 +28,28 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path="about"  element={<About />}/>
     <Route path="vans" errorElement={<Error />}>
       <Route index loader={vanPageLoader} element={<Vans />} />
-      <Route path=":id" element={<VanDetail/>}/>
+      <Route path=":id"  element={<VanDetail/>}/>
     </Route>
     <Route path="host" element={<HostLayout />} loader={
       async() => {
-        const isLoggedIn = false
-        if(!isLoggedIn){
-            redirect("/login")
-        }
         return null
       }
     }>
-      <Route index element={<Host />}/>
-      <Route path="income" element={<Income />}/>
-      <Route path="reviews" element={<Reviews />}/>
+      <Route index element={<Host />} loader={
+      async() => {
+        return null
+      }
+    }/>
+      <Route path="income" element={<Income />} loader={
+      async() => {
+        return null
+      }
+    }/>
+      <Route path="reviews" element={<Reviews />} loader={
+      async() => {
+        return null
+      }
+    }/>
       <Route path="vans">
         <Route index element={<HostVans />}></Route>
         <Route path=":id" element={<HostVanDetail/>}>

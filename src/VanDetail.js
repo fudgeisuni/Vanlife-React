@@ -1,6 +1,12 @@
 import React from "react"
 import { useParams, Link, useLocation } from "react-router-dom"
 import "./style.css";
+import {getVans} from "./Api.js"
+
+export function loader({params}){
+  console.log(params)
+  return getVans()
+}
 
 export default function VanDetail(){
     const params = useParams()
