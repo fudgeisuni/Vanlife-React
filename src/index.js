@@ -18,6 +18,7 @@ import HostVanPricing from './HostVanPricing'
 import "./server.js";
 import Layout from '../components/Layout';
 import Error from '../components/Error';
+import VanDetail, {loader as vanDetailLoader} from './VanDetail.js'
 
 
 const rootElement = document.getElementById('root');
@@ -28,7 +29,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path="about"  element={<About />}/>
     <Route path="vans" errorElement={<Error />}>
       <Route index loader={vanPageLoader} element={<Vans />} />
-      <Route path=":id"  element={<VanDetail/>}/>
+      <Route path=":id"  element={<VanDetail/>} loader={vanDetailLoader}/>
     </Route>
     <Route path="host" element={<HostLayout />} loader={
       async() => {
