@@ -8,7 +8,6 @@ export function loader({params}){
 }
 
 export default function VanDetail(){
-        // const [van, setVan] = React.useState([]);
     const location = useLocation()
 
     const vans = useLoaderData();
@@ -18,12 +17,6 @@ export default function VanDetail(){
 
     const search = location.state?.search || "";
     const type = location.state?.type || "all";
-
-    // React.useEffect(function() {
-    //   fetch("/api/vans/" + params.id.toString())
-    //       .then(res => res.json())
-    //       .then(data => setVan(data.vans))
-    // }, [params.id])
 
     return(
      <div>

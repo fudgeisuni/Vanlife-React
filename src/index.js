@@ -19,6 +19,7 @@ import "./server.js";
 import Layout from '../components/Layout';
 import Error from '../components/Error';
 import VanDetail, {loader as vanDetailLoader} from './VanDetail.js'
+import HostVans, {loader as hostVansLoader} from './HostVans.js'
 
 
 const rootElement = document.getElementById('root');
@@ -52,7 +53,7 @@ const router = createBrowserRouter(createRoutesFromElements(
       }
     }/>
       <Route path="vans">
-        <Route index element={<HostVans />}></Route>
+        <Route index element={<HostVans />} loader={hostVansLoader}></Route>
         <Route path=":id" element={<HostVanDetail/>}>
           <Route index element={<HostVanInfo />}></Route> 
           <Route path="photos" element={<HostVanPhotos />}></Route> 

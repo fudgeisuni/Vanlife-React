@@ -1,18 +1,24 @@
 import React from "react"
-import { BrowserRouter as Router, Routes, Route, Link, useSearchParams} from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route, Link, useSearchParams, useLoaderData, useParams} from "react-router-dom"
+import {getHostVans} from "./Api.js"
+
+export function loader(){
+  return getHostVans()
+}
 
 export default function HostVans(){
 
-  const [vans, setVans] = React.useState([]);
-
+  // const [vans, setVans] = React.useState([]);
   const [searchParams, setSearchParams] = useSearchParams()
-  const typeFilter = searchParams.get("type")
+  const typeFilter = searchParams.get("type");
+  
+  const vans = useLoaderData();
 
-  React.useEffect(function() {
-    fetch("/api/host/vans")
-        .then(res => res.json())
-        .then(data => setVans(data.vans))
-  }, [])
+  // React.useEffect(function() {
+  //   fetch("/api/host/vans")
+  //       .then(res => res.json())
+  //       .then(data => setVans(data.vans))
+  // }, [])
   
   const vanElements = vans.map(van => (
     <div key={van.id} className="van-tile-host">
