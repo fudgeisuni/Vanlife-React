@@ -1,18 +1,23 @@
 import React from "react"
-import { useParams, Link, Outlet, NavLink } from "react-router-dom"
+import { useParams, Link, Outlet, NavLink, useLoaderData} from "react-router-dom"
 import "./style.css";
+import {getHostVans} from "./Api.js"
+
+export function loader(){
+  return getHostVans()
+}
 
 export default function HostVanDetail(){
-    const params = useParams()
-    console.log(params)
+    const vans = useLoaderData();
+    const params = useParams();
+    const id = params.id;
+    const van = vans[id];
 
-    const [van, setVan] = React.useState([]);
-
-    React.useEffect(function() {
-      fetch("/api/vans/" + params.id.toString())
-          .then(res => res.json())
-          .then(data => setVan(data.vans))
-    }, [params.id])
+    // React.useEffect(function() {
+    //   fetch("/api/vans/" + params.id.toString())
+    //       .then(res => res.json())
+    //       .then(data => setVan(data.vans))
+    // }, [params.id])
 
     const activeStyles = {
       fontWeight: "600",
@@ -54,7 +59,7 @@ export default function HostVanDetail(){
                 Photos</NavLink>
             </nav>
 
-            <Outlet context={[van, setVan]}/>
+            <Outlet context={[van]}/>
           </div>
       </section>
       ) : <h2>Loading</h2>}
