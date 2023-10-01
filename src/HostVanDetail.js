@@ -1,17 +1,18 @@
 import React from "react"
 import { useParams, Link, Outlet, NavLink, useLoaderData} from "react-router-dom"
 import "./style.css";
-import {getHostVans} from "./Api.js"
+import {getVans} from "./Api.js"
 
 export function loader(){
-  return getHostVans()
+  return getVans()
 }
 
 export default function HostVanDetail(){
     const vans = useLoaderData();
     const params = useParams();
-    const id = params.id;
+    const id = (params.id - 1);
     const van = vans[id];
+    console.log(id)
 
     // React.useEffect(function() {
     //   fetch("/api/vans/" + params.id.toString())

@@ -12,7 +12,7 @@ export default function VanDetail(){
 
     const vans = useLoaderData();
     const params = useParams();
-    const id = params.id;
+    const id = (params.id -1);
     const van = vans[id];
 
     const search = location.state?.search || "";
