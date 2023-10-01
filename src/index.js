@@ -21,6 +21,8 @@ import Error from '../components/Error';
 import VanDetail, {loader as vanDetailLoader} from './VanDetail.js'
 import HostVans, {loader as hostVansLoader} from './HostVans.js'
 import HostVanDetail, {loader as hostVanDetailLoader} from './HostVanDetail.js'
+import {requireAuth} from './Utils.js'
+import Login from "./Login.js"
 
 
 const rootElement = document.getElementById('root');
@@ -29,13 +31,17 @@ const router = createBrowserRouter(createRoutesFromElements(
    <Route path="/" element={<Layout />}>
     <Route index  element={<Home />}/>
     <Route path="about"  element={<About />}/>
+    <Route
+      path="login"
+      element={<Login />}
+    />
     <Route path="vans" errorElement={<Error />}>
       <Route index loader={vanPageLoader} element={<Vans />} />
       <Route path=":id"  element={<VanDetail/>} loader={vanDetailLoader}/>
     </Route>
     <Route path="host" element={<HostLayout />} loader={
       async() => {
-        return null
+        return await requireAuth()
       }
     }>
       <Route index element={<Host />} loader={
