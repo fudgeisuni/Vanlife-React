@@ -21,6 +21,7 @@ export default function Login() {
         <div className="login-container">
             <h1>Sign in to your account</h1>
             <form onSubmit={handleSubmit} className="login-form">
+                <div class="accountDiv">
                 <input
                     name="email"
                     onChange={handleChange}
@@ -30,12 +31,14 @@ export default function Login() {
                 />
                 <input
                     name="password"
+                    class="passwordBox"
                     onChange={handleChange}
                     type="password"
                     placeholder="Password"
                     value={loginFormData.password}
                 />
-                <button>Log in</button>
+                </div>
+                <button class="logInButton">Log in</button>
             </form>
         </div>
     )

@@ -287,3 +287,24 @@ body{
   justify-content: center;
   justify-items: center;
 }
+
+.login-container{
+ height: 65.4vh; 
+ display: table;
+ padding: 5vh;
+}
+
+.accountDiv{
+  padding-bottom: 3vh;
+}
+
+.passwordBox{
+  margin-left: 2vh;
+}
+
+.logInButton{
+  padding-right: 12.2em;
+  padding-left: 12.2em;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
