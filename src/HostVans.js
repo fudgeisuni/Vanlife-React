@@ -1,8 +1,10 @@
 import React from "react"
 import { BrowserRouter as Router, Routes, Route, Link, useSearchParams, useLoaderData, useParams} from "react-router-dom"
 import {getHostVans} from "./Api.js"
+import {requireAuth} from "./Utils.js"
 
 export function loader(){
+  await requireAuth()
   return getHostVans()
 }
 
